@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <main>
+      <div>
+        <form action="/workflow" method="post">
+          <fieldset>
+              <legend>Create new work order</legend>
+            <label>
+              Customer:<input
+                type="text"
+                name="customer"
+                placeholder="Enter company name"
+              />
+            </label>
+
+            <label>
+              Unit #:<input
+                type="text"
+                name="unitNo"
+                placeholder="Enter trailer number"
+              />
+            </label>
+
+            <label>
+                Customer Complaint:<input
+                type="text"
+                name="customerComplaint"
+                placeholder="Enter main complaint"
+              />
+            </label>
+
+          </fieldset>
+          <input type="submit" value="Create" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head.ejs partial -->
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <!-- header.ejs partial -->
+        <%- include("./partials/header.ejs") %>
+            <a href="/"><button class="btn btn-secondary">Logout</button></a>
+            <a href="/workflow/new">
+                <button class="btn btn-primary">Create New</button>
+            </a>
+            <main>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>Customer:</th>
+                            <th>Unit #:</th>
+                            <th>Status:</th>
+                            <th>Bay:</th>
+                        </tr>
+                        <% for (el of assignedWOrders) { %>
+                            <tr>
+                                <td><%= el.customer %></td>
+                                <td><a href="/workflow/<%= el._id %>"><%= el.unitNo %></a></td>
+                                <td><%= el.woStatus %></td>
+                                <td><%= el.bayNo %></td>
+                            </tr>
+                            <% } %>
+                    </table>
+
+                </div>
+            </main>
+    </body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <div>
+                    <p>Assigned to: <%= techId.alias %>
+                    </p>
+                    <p>Customer: <%= wOrder.customer %>
+                    </p>
+                    <p>Unit #: <%= wOrder.unitNo %>
+                    </p>
+                    <p>Customer Complaint: <%= wOrder.customerComplaint %>
+                    </p>
+
+                    <form action="/workflow/<%= wOrder._id%>?_method=PUT" method="post">
+                        <fieldset>
+                            <legend>Edit <%=wOrder.unitNo%>
+                            </legend>
+
+                            <label for="woStatus" class="form-label">Status:</label>
+                            <select name="woStatus" id="woStatus">
+                                <option value='WOAPPR' <%=wOrder.woStatus==='WOAPPR' ? 'selected' : '' %>>WOAPPR
+                                </option>
+                                <option value='Approved' <%=wOrder.woStatus==='Approved' ? 'selected' : '' %>>Approved
+                                </option>
+                                <option value='Inspection' <%=wOrder.woStatus==='Inspection' ? 'selected' : '' %>
+                                    >Inspection</option>
+                                <option value='In Progress' <%=wOrder.woStatus==='In Progress' ? 'selected' : '' %>>In
+                                    Progress</option>
+                                <option value='Parts ordered' <%=wOrder.woStatus==='Parts ordered' ? 'selected' : '' %>
+                                    >Parts ordered</option>
+                                <option value='Declained' <%=wOrder.woStatus==='Declained' ? 'selected' : '' %>
+                                    >Declained</option>
+                                <option value='Completed' <%=wOrder.woStatus==='Completed' ? 'selected' : '' %>
+                                    >Completed</option>
+                                <option value='Pending' <%=wOrder.woStatus==='Pending' ? 'selected' : '' %>>Pending
+                                </option>
+                            </select>
+
+
+                            <label for="bayNo" class="form-label">Bay #:</label>
+                            <select name="bayNo" id="bayNo">
+                                <option value="1" <%=wOrder.bayNo==='1' ? 'selected' : '' %>>1</option>
+                                <option value="2" <%=wOrder.bayNo==='2' ? 'selected' : '' %>>2</option>
+                                <option value="3" <%=wOrder.bayNo==='3' ? 'selected' : '' %>>3</option>
+                                <option value="Yard" <%=wOrder.bayNo==='Yard' ? 'selected' : '' %>>Yard</option>
+                            </select><br>
+
+                            <label for="notes" class="form-label">Technician Findings:</label><br>
+                            <textarea class="form-control" name="techFindings" id="techFindings"
+                                placeholder="Enter findings"><%= wOrder.techFindings %></textarea><br>
+
+                            <label for="notes" class="form-label">Repair Description:</label><br>
+                            <textarea class="form-control" name="repairDescription" id="repairDescription"
+                                placeholder="Enter repairs"><%= wOrder.repairDescription %></textarea><br>
+
+                        </fieldset>
+                        <input type="submit" value="update <%= wOrder.unitNo %>" class="btn btn-primary" />
+                    </form>
+                    <a class="home" href="/workflow">
+                        <button class="btn btn-primary">Back</button>
+                    </a>
+                </div>
+            </main>
+    </body>
+
+</html>
