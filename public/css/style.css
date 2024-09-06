@@ -25,3 +25,12 @@ body{
 .btn {
     margin: 5px;
 }
+
+.encloserOne{
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcomeMsg{
+    margin-right: 10px;
+}

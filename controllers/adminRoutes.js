@@ -14,12 +14,13 @@ router.use((req, res, next) => {
 
 
 router.get('/', async (req, res) => {
+    const user = req.session.alias
     if(!req.session.isAdmin){
         const assignedWOrders = await WorkOrder.find({techName: req.session.userId});
-        res.render('indexTech.ejs', { assignedWOrders });
+        res.render('indexTech.ejs', { assignedWOrders, user });
     }else{
         const wOrder = await WorkOrder.find({});
-        res.render('indexAdmin.ejs', { wOrder });
+        res.render('indexAdmin.ejs', { wOrder, user });
     }
 });
 

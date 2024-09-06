@@ -6,10 +6,19 @@
     <body>
         <!-- header.ejs partial -->
         <%- include("./partials/header.ejs") %>
-            <a href="/"><button class="btn btn-secondary">Logout</button></a>
-            <a href="/workflow/new">
-                <button class="btn btn-primary">Create New</button>
-            </a>
+        <div class="encloserOne">
+            <div class= refBtn>
+                <a href="/">
+                    <button class="btn btn-secondary">Logout</button>
+                </a>
+                <a href="/workflow/new">
+                    <button class="btn btn-primary">Create New</button>
+                </a>
+            </div>
+            <div class="welcomeMsg">
+                <p>Welcome <%= user %></p>
+            </div>
+    </div>
             <main>
                 <div>
                     <table class="table">
@@ -22,15 +31,26 @@
                         </tr>
                         <% for (el of wOrder) { %>
                             <tr>
-                                <td><%= el.customer %></td>
-                                <td><a href="/workflow/<%= el._id %>"><%= el.unitNo %></a></td>
-                                <td><%= el.bayNo %></td>
-                                <td><%= el.woStatus %></td>
-                                <td><%= el.updatedAt.toDateString() %></td>
+                                <td>
+                                    <%= el.customer %>
+                                </td>
+                                <td><a href="/workflow/<%= el._id %>">
+                                        <%= el.unitNo %>
+                                    </a></td>
+                                <td>
+                                    <%= el.bayNo %>
+                                </td>
+                                <td>
+                                    <%= el.woStatus %>
+                                </td>
+                                <td>
+                                    <%= el.updatedAt.toDateString() %>
+                                </td>
                             </tr>
                             <% } %>
                     </table>
                 </div>
             </main>
     </body>
+
 </html>

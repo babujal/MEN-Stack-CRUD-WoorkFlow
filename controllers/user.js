@@ -45,6 +45,7 @@ router.post("/login", async (req, res) => {
                 req.session.username = req.body.username;
                 req.session.isAdmin = user.isAdmin
                 req.session.userId = user._id
+                req.session.alias = user.alias
                 res.redirect("/workflow");
             } else {
             //passwords DO NOT match, send this string

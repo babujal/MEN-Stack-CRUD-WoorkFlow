@@ -6,10 +6,19 @@
     <body>
         <!-- header.ejs partial -->
         <%- include("./partials/header.ejs") %>
-            <a href="/"><button class="btn btn-secondary">Logout</button></a>
-            <a href="/workflow/new">
-                <button class="btn btn-primary">Create New</button>
-            </a>
+        <div class="encloserOne">
+                <div class= refBtn>
+                    <a href="/">
+                        <button class="btn btn-secondary">Logout</button>
+                    </a>
+                    <a href="/workflow/new">
+                        <button class="btn btn-primary">Create New</button>
+                    </a>
+                </div>
+                <div class="welcomeMsg">
+                    <p>Welcome <%= user %></p>
+                </div>
+        </div>
             <main>
                 <div>
                     <table class="table">
