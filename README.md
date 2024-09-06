@@ -1,6 +1,6 @@
 # 2-Work Flow app
 
-![Screenshot](./images/some.png)
+![Screenshot](/images/some.png)
 
 ## App Name: Tr Work Flow
 
