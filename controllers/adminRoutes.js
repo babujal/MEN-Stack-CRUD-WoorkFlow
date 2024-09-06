@@ -31,7 +31,6 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     req.body.username = req.session.username;
     await WorkOrder.create(req.body);
-    console.log(req.body)
     res.redirect('/workflow');
 });
 
@@ -48,13 +47,10 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id;
     const wOrder = await WorkOrder.findById(id).populate("techName");
     const techId = wOrder.techName;
-    console.log(`The user is admin ${req.session.isAdmin}`);
     if(!req.session.isAdmin){
         res.render('editTech.ejs', { wOrder, usersObj, techId });
-        console.log('is not admin')
     }else{
         res.render('editAdmin.ejs', { wOrder, usersObj, techId });
-        console.log('It is admin')
     }
 });
 
