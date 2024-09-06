@@ -13,12 +13,6 @@ router.get("/signup", (req, res) => {
 router.post("/signup", async (req, res) => {
 
     try{
-        // //logging the user name and password that the person entered
-        // console.log(req.body)
-
-        //encrypt my password
-        //await bcrypt.genSalt(10): generates a 'salt' (cost factor) for the password hashing process
-        //await bcrypt.hash is the actual hashing that takes place using the gensalt above
         req.body.password = await bcrypt.hash(req.body.password, await bcrypt.genSalt(10));
         
         // once the password has been hased create the user in the DB
@@ -27,7 +21,7 @@ router.post("/signup", async (req, res) => {
         //then redirect to /user/login
         res.redirect("/user/login")
     } catch(err){
-        res.send(400).json(err);
+        res.sendStatus(400).json(err);
     }
 });
 
@@ -58,7 +52,7 @@ router.post("/login", async (req, res) => {
             }
         }
     } catch(err){
-        res.status(400).json(err);
+        res.sendStatus(400).json(err);
     }
 });
 
