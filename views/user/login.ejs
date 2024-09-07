@@ -7,15 +7,14 @@
     <main>
       <div>
         <form action="/user/login" method="post">
-          <fieldset>
+          <fieldset class="loginForm">
             <legend>User Login</legend>
-            <label
-              >USERNAME: <input type="text" name="username" required />
-            </label>
-            <label
-              >PASSWORD: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Login" />
+            <label class="form-label">USERNAME:</label>
+            <input class="usersFormInput" type="text" name="username" required />
+            <label class="form-label">PASSWORD:</label>
+            <input class="usersFormInput" type="password" name="password" required />
+            </label><br>
+            <input type="submit" value="Login" class="btn btn-primary" />
           </fieldset>
         </form>
       </div>

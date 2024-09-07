@@ -34,3 +34,21 @@ body{
 .welcomeMsg{
     margin-right: 10px;
 }
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.usersFormInput{
+    margin-bottom: 20px;
+}
+
+.landingBody{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
