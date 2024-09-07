@@ -24,7 +24,7 @@ app.use(session({
 }));
 
 ///////////Routes///////////////
-app.use('/workflow', wOrderRouter);//placement of the routes dependencie is critical to be below all other dependencies
+app.use('/workflow', wOrderRouter);
 app.use('/user', UserRouter);
 
 app.get('/', async (req, res) => {

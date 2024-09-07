@@ -55,19 +55,9 @@ router.get('/:id', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-    // if statemoent to solve cast error
     if (req.body.techName === '') {
         req.body.techName = null
     }
-    // else{
-    //     wOrderId = req.body._id;
-    //     techId = req.body.techName
-    //     await WorkOrder.findByIdAndUpdate(
-    //         wOrderId,
-    //         { techName: techId },
-    //         { new: true }
-    //     );
-    // }
     const id = req.params.id;
     await WorkOrder.findByIdAndUpdate(id, req.body);
     res.redirect('/workflow');
