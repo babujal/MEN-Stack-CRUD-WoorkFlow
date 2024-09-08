@@ -20,34 +20,45 @@
                             <legend>Edit <%=wOrder.unitNo%>
                             </legend>
 
-                            <label for="woStatus" class="form-label">Status:</label>
-                            <select name="woStatus" id="woStatus">
-                                <option value='WOAPPR' <%=wOrder.woStatus==='WOAPPR' ? 'selected' : '' %>>WOAPPR
-                                </option>
-                                <option value='Approved' <%=wOrder.woStatus==='Approved' ? 'selected' : '' %>>Approved
-                                </option>
-                                <option value='Inspection' <%=wOrder.woStatus==='Inspection' ? 'selected' : '' %>
-                                    >Inspection</option>
-                                <option value='In Progress' <%=wOrder.woStatus==='In Progress' ? 'selected' : '' %>>In
-                                    Progress</option>
-                                <option value='Parts ordered' <%=wOrder.woStatus==='Parts ordered' ? 'selected' : '' %>
-                                    >Parts ordered</option>
-                                <option value='Declained' <%=wOrder.woStatus==='Declained' ? 'selected' : '' %>
-                                    >Declained</option>
-                                <option value='Completed' <%=wOrder.woStatus==='Completed' ? 'selected' : '' %>
-                                    >Completed</option>
-                                <option value='Pending' <%=wOrder.woStatus==='Pending' ? 'selected' : '' %>>Pending
-                                </option>
-                            </select>
+                            <div class="selectFields">
+                                <div class="selectDiv">
+                                    <label for="woStatus" class="form-label">Status:</label><br>
+                                    <select name="woStatus" id="woStatus">
+                                        <option value='WOAPPR' <%=wOrder.woStatus==='WOAPPR' ? 'selected' : '' %>>WOAPPR
+                                        </option>
+                                        <option value='Approved' <%=wOrder.woStatus==='Approved' ? 'selected' : '' %>
+                                            >Approved
+                                        </option>
+                                        <option value='Inspection' <%=wOrder.woStatus==='Inspection' ? 'selected' : ''
+                                            %>
+                                            >Inspection</option>
+                                        <option value='In Progress' <%=wOrder.woStatus==='In Progress' ? 'selected' : ''
+                                            %>
+                                            >In
+                                            Progress</option>
+                                        <option value='Parts ordered' <%=wOrder.woStatus==='Parts ordered' ? 'selected'
+                                            : '' %>
+                                            >Parts ordered</option>
+                                        <option value='Declained' <%=wOrder.woStatus==='Declained' ? 'selected' : '' %>
+                                            >Declained</option>
+                                        <option value='Completed' <%=wOrder.woStatus==='Completed' ? 'selected' : '' %>
+                                            >Completed</option>
+                                        <option value='Pending' <%=wOrder.woStatus==='Pending' ? 'selected' : '' %>
+                                            >Pending
+                                        </option>
+                                    </select>
+                                </div>
 
-
-                            <label for="bayNo" class="form-label">Bay #:</label>
-                            <select name="bayNo" id="bayNo">
-                                <option value="1" <%=wOrder.bayNo==='1' ? 'selected' : '' %>>1</option>
-                                <option value="2" <%=wOrder.bayNo==='2' ? 'selected' : '' %>>2</option>
-                                <option value="3" <%=wOrder.bayNo==='3' ? 'selected' : '' %>>3</option>
-                                <option value="Yard" <%=wOrder.bayNo==='Yard' ? 'selected' : '' %>>Yard</option>
-                            </select><br>
+                                <div class="selectDiv">
+                                    <label for="bayNo" class="form-label">Bay #:</label><br>
+                                    <select name="bayNo" id="bayNo">
+                                        <option value="1" <%=wOrder.bayNo==='1' ? 'selected' : '' %>>1</option>
+                                        <option value="2" <%=wOrder.bayNo==='2' ? 'selected' : '' %>>2</option>
+                                        <option value="3" <%=wOrder.bayNo==='3' ? 'selected' : '' %>>3</option>
+                                        <option value="Yard" <%=wOrder.bayNo==='Yard' ? 'selected' : '' %>>Yard</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <label for="notes" class="form-label">Technician Findings:</label><br>
                             <textarea class="form-control" name="techFindings" id="techFindings"
@@ -61,7 +72,7 @@
                         <input type="submit" value="update <%= wOrder.unitNo %>" class="btn btn-primary" />
                     </form>
                     <a class="home" href="/workflow">
-                        <button class="btn btn-primary">Back</button>
+                        <button class="btn btn-secondary">Back</button>
                     </a>
                 </div>
             </main>
