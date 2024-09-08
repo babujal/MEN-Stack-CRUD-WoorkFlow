@@ -43,7 +43,6 @@ router.get('/:id', async (req, res) => {
         userId = objectId.toString();
         usersObj[el.alias] = userId;
     };
-    console.log(usersObj);
     const id = req.params.id;
     const wOrder = await WorkOrder.findById(id).populate("techName");
     const techId = wOrder.techName;

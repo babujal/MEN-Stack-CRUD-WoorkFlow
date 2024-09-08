@@ -52,3 +52,30 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.edAdminTwo{
+    width: 55vw;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.marginRight{
+    margin-right: 10px;
+}
+
+.selectFields{
+    /* width: 55vw; */
+    display: flex;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+.select{
+    border-radius: 5px;
+    border-color: lightgray;
+}
+
+.selectDiv{
+    margin-right: 10px;
+}

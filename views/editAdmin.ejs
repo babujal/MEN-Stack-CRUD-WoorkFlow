@@ -16,53 +16,69 @@
                 </p>
               </div>
 
-              <label class="form-label">Customer:</label><br>
-              <input type="text" name="customer" value="<%= wOrder.customer %>" placeholder="Enter company name" />
+              <div class="edAdminTwo">
+                <div class="marginRight">
+                  <label>Customer:</label><br>
+                  <input class="form-control" type="text" name="customer" value="<%= wOrder.customer %>"
+                    placeholder="Enter company name" />
+                </div>
+                <div>
+                  <label>Unit #:</label><br>
+                  <input class="form-control" type="text" name="unitNo" value="<%= wOrder.unitNo %>"
+                    placeholder="Enter trailer number" />
+                </div>
+              </div>
 
-              <label class="form-label">
-                Unit #:<input type="text" name="unitNo" value="<%= wOrder.unitNo %>"
-                  placeholder="Enter trailer number" />
-              </label><br>
-
-              <label class="form-label">Customer Complaint:</label><br>
+              <label class="form-label">Customer Complaint:</label>
               <textarea class="form-control" name="customerComplaint" id="customerComplaint"
                 placeholder="Enter complaint"><%= wOrder.customerComplaint %></textarea><br>
 
-              <label for="woStatus" class="form-label">Status:</label>
-              <select name="woStatus" id="woStatus">
-                <option value='WOAPPR' <%=wOrder.woStatus==='WOAPPR' ? 'selected' : '' %>>WOAPPR</option>
-                <option value='Approved' <%=wOrder.woStatus==='Approved' ? 'selected' : '' %>>Approved</option>
-                <option value='Inspection' <%=wOrder.woStatus==='Inspection' ? 'selected' : '' %>>Inspection</option>
-                <option value='In Progress' <%=wOrder.woStatus==='In Progress' ? 'selected' : '' %>>In Progress</option>
-                <option value='Parts ordered' <%=wOrder.woStatus==='Parts ordered' ? 'selected' : '' %>>Parts ordered
-                </option>
-                <option value='Declained' <%=wOrder.woStatus==='Declained' ? 'selected' : '' %>>Declained</option>
-                <option value='Completed' <%=wOrder.woStatus==='Completed' ? 'selected' : '' %>>Completed</option>
-                <option value='Pending' <%=wOrder.woStatus==='Pending' ? 'selected' : '' %>>Pending</option>
-              </select>
-
-              <label for="techName" class="form-label">Technician:</label>
-              <select name="techName" id="techName">
-                <% if(!wOrder.techName){ %>
-                  <option value="">Unassigned</option>
-                  <% }else{ %>
-                    <option value=<%=techId._id; %>><%= techId.alias %>
+              <div class="selectFields">
+                <div class="selectDiv">
+                  <label for="woStatus">Status:</label><br>
+                  <select class="select" name="woStatus" id="exampleFormControlSelect1">
+                    <option value='WOAPPR' <%=wOrder.woStatus==='WOAPPR' ? 'selected' : '' %>>WOAPPR</option>
+                    <option value='Approved' <%=wOrder.woStatus==='Approved' ? 'selected' : '' %>>Approved</option>
+                    <option value='Inspection' <%=wOrder.woStatus==='Inspection' ? 'selected' : '' %>>Inspection
                     </option>
-                    <% } %>
-                      <% for (let key in usersObj) { %>
-                        <option value=<%=usersObj[key] %>
-                          <%= wOrder.techName===usersObj[key] %> ? 'selected' : null %>><%= key %>
+                    <option value='In Progress' <%=wOrder.woStatus==='In Progress' ? 'selected' : '' %>>In Progress
+                    </option>
+                    <option value='Parts ordered' <%=wOrder.woStatus==='Parts ordered' ? 'selected' : '' %>>Parts
+                      ordered
+                    </option>
+                    <option value='Declained' <%=wOrder.woStatus==='Declained' ? 'selected' : '' %>>Declained</option>
+                    <option value='Completed' <%=wOrder.woStatus==='Completed' ? 'selected' : '' %>>Completed</option>
+                    <option value='Pending' <%=wOrder.woStatus==='Pending' ? 'selected' : '' %>>Pending</option>
+                  </select>
+                </div>
+
+                <div class="selectDiv">
+                  <label for="techName">Tech:</label><br>
+                  <select class="select" name="techName" id="techName">
+                    <% if(!wOrder.techName){ %>
+                      <option value="">Unassigned</option>
+                      <% }else{ %>
+                        <option value=<%=techId._id; %>><%= techId.alias %>
                         </option>
                         <% } %>
-              </select>
+                          <% for (let key in usersObj) { %>
+                            <option value=<%=usersObj[key] %>
+                              <%= wOrder.techName===usersObj[key] %> ? 'selected' : null %>><%= key %>
+                            </option>
+                            <% } %>
+                  </select>
+                </div>
 
-              <label for="bayNo" class="form-label">Bay #:</label>
-              <select name="bayNo" id="bayNo">
-                <option value="1" <%=wOrder.bayNo==='1' ? 'selected' : '' %>>1</option>
-                <option value="2" <%=wOrder.bayNo==='2' ? 'selected' : '' %>>2</option>
-                <option value="3" <%=wOrder.bayNo==='3' ? 'selected' : '' %>>3</option>
-                <option value="Yard" <%=wOrder.bayNo==='Yard' ? 'selected' : '' %>>Yard</option>
-              </select><br>
+                <div class="selectDiv">
+                  <label for="bayNo">Bay #:</label><br>
+                  <select class="select" name="bayNo" id="bayNo">
+                    <option value="1" <%=wOrder.bayNo==='1' ? 'selected' : '' %>>1</option>
+                    <option value="2" <%=wOrder.bayNo==='2' ? 'selected' : '' %>>2</option>
+                    <option value="3" <%=wOrder.bayNo==='3' ? 'selected' : '' %>>3</option>
+                    <option value="Yard" <%=wOrder.bayNo==='Yard' ? 'selected' : '' %>>Yard</option>
+                  </select>
+                </div>
+              </div>
 
               <label for="notes" class="form-label">Technician Findings:</label><br>
               <textarea class="form-control" name="techFindings" id="techFindings"
