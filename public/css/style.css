@@ -2,6 +2,10 @@ body{
     padding: 0 5px 0 5px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .mainBody{
     display: flex;
     flex-direction: column;
@@ -64,8 +68,11 @@ body{
     margin-right: 10px;
 }
 
+.marginTop{
+    margin-top: 15px;
+}
+
 .selectFields{
-    /* width: 55vw; */
     display: flex;
     margin-bottom: 25px;
     padding: 10px;
@@ -78,4 +85,8 @@ body{
 
 .selectDiv{
     margin-right: 10px;
+}
+
+.createBtn{
+    margin: 15px;
 }

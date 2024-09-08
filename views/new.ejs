@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
+<%- include("./partials/head.ejs") %>
 
   <body>
     <%- include("./partials/header.ejs") %>
-    <main>
-      <div>
-        <form action="/workflow" method="post">
-          <fieldset>
-              <legend>Create new work order</legend>
-            <label>
-              Customer:<input
-                type="text"
-                name="customer"
-                placeholder="Enter company name"
-              />
-            </label>
+      <main>
+        <div>
+          <form action="/workflow" method="post">
+            <fieldset>
+              <div>
+                <legend>Create new work order</legend>
+                <label class="marginTop">Customer:</label><br>
+                <input class="select" type="text" name="customer" placeholder="Enter company name" />
+              </div>
 
-            <label>
-              Unit #:<input
-                type="text"
-                name="unitNo"
-                placeholder="Enter trailer number"
-              />
-            </label>
+              <div>
+                <label class="marginTop">Unit #:</label><br>
+                <input class="select" type="text" name="unitNo" placeholder="Enter trailer number" />
+              </div>
 
-            <label>
-                Customer Complaint:<input
-                type="text"
-                name="customerComplaint"
-                placeholder="Enter main complaint"
-              />
-            </label>
+              <div>
+                <label class="marginTop">Customer Complaint:</label><br>
+                <textarea class="form-control" type="text" name="customerComplaint"
+                  placeholder="Enter main complaint"></textarea>
+              </div>
 
-          </fieldset>
-          <input type="submit" value="Create" />
-        </form>
-      </div>
-    </main>
+            </fieldset>
+            <input type="submit" value="Create" class="btn btn-primary createBtn" />
+          </form>
+          <a class="home" href="/workflow">
+            <button class="btn btn-secondary">Back</button>
+          </a>
+        </div>
+      </main>
   </body>
+
 </html>
