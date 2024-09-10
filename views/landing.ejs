@@ -7,12 +7,68 @@
 
 <body>
     <%- include("./partials/header.ejs") %>
-    <main class="mainBody">
-        <div class="landingBody">
-            <a href="/user/signup"><button type="button" class="btn btn-primary">Signup</button></a>
-            <a href="/user/login"><button type="button" class="btn btn-success">Login</button></a>
-        </div>
-    </main>
+        <main class="mainBody">
+            <div class="intro">
+                <h6>Description:</h6>
+                <p>
+                    The Work Flow app is a proof of concept app designed to streamline the management and tracking of
+                    trailer repairs within a workshop. This app allows you to create and manage work orders from the
+                    moment a trailer enters the shop, ensuring that every step of the repair process is manage and
+                    easily accessible by admin and tech staff. Please notice that admins users have diferent privilages
+                    than techniciant users.
+                </p>
+            </div>
+            <div class="landingBtns">
+                <a href="/user/signup"><button type="button" class="btn btn-primary">Signup</button></a>
+                <a href="/user/login"><button type="button" class="btn btn-success">Login</button></a>
+            </div>
+
+            <div class="usersCredentials">
+                <div class="credAdmin">
+                    <h6>Admin credentials:</h6>
+                    <p>
+                        Username: admin <br>
+                        Password: 1234
+                    </p>
+                </div>
+                <div class="credTechs">
+                    <h6>Techniciant credentials:</h6>
+                    <p>
+                        Username: user1, user2, & user3 <br>
+                        Password: 1234
+                    </p>
+                </div>
+            </div>
+
+            <div class="usersTypes">
+                <div>
+                    <h6>Admin users can:</h6>
+                    <ul>
+                        <li>Create work orders.</li>
+                        <li>See all workorders in existence.</li>
+                        <li>Edit all fields in the work order ecept for the Repair Description field.</li>
+                        <li>See the date when a work order was created and last updated.</li>
+                        <li>Delete work orders.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h6>Techniciant users can:</h6>
+                    <ul>
+                        <li>Create work orders.</li>
+                        <li>See only workorders assigned to him.</li>
+                        <li>See the date when a work order was created and last updated.</li>
+                        <li>see all the fields in a work order but can only edit Sataus, Bay #, Technician Findings
+                            &
+                            Repair
+                            Description</li>
+                    </ul>
+                </div>
+            </div>
+            <p>"If someone signs up, the app will treat them as a technician, as this is the default behavior. Admin
+                users can only be created from the database."</p>
+            </div>
+        </main>
 </body>
 
 </html>

@@ -6,12 +6,6 @@ a{
     text-decoration: none;
 }
 
-.mainBody{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .home{
     display: flex;
     justify-content: center;
@@ -50,11 +44,36 @@ a{
     margin-bottom: 20px;
 }
 
-.landingBody{
-    height: 50vh;
+.mainBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.intro{
+    margin-top: 30px;
+}
+
+.usersCredentials{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.credAdmin{
+    padding: 5px;
+}
+
+.credTechs{
+    padding: 5px;
+}
+
+.landingBtns{
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.usersTypes{
+    margin-top: 30px;
 }
 
 .edAdminTwo{
