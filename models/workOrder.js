@@ -5,8 +5,8 @@
 const mongoose = require('./connection');
 
 const WorkOrderSchema = new mongoose.Schema({
-    unitNo: {type: String, require: true, unique: true},
-    customer: {type: String, require: true},
+    unitNo: {type: String, required: true, unique: true},
+    customer: {type: String, required: true},
     bayNo: {type: String, enum: ['1', '2', '3', 'Yard'], default: 'Yard'},
     woStatus: {type: String, enum: ['WOAPPR', 'Approved', 'Inspection', 'In Progress', 'Parts ordered', 'Declained', 'Completed', 'Pending'], default: 'Pending'},
     customerComplaint: {type: String, require: true},
